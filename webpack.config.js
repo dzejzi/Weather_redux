@@ -12,15 +12,12 @@ module.exports = {
 
     module: {
 
-        rules: [
+        loaders: [
          
             {
                 test: /\.jsx?$/,
-                include: [
-                    path.resolve(__dirname, "app")
-                ],              
-
-                loader: "babel-loader",             
+                exclude: /(node_modules|bower_components)/,         
+                loader: "babel-loader"             
 
             }]
     },
