@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {ADD, MINUS} from './../../ducks/weather';
+import { RED, GREEN, CHANGE_COLOR } from './../../ducks/color';
 
 
 class App extends Component {
 
     render() {
+        const { changeColor, value } = this.props;
         return (
             <div>
-                <button onClick={this.props.add}>CLICK +</button>
-                <button onClick={this.props.minus}>CLICK -</button>
-                <p>{this.props.count}</p>
+                <button onClick={() => changeColor('red')}>RED</button>
+                <button onClick={() => changeColor('green')}>GREEN</button>
+                <button onClick={() => changeColor('blue')}>BLUE</button>
+                <p>{value}</p>
             </div>
         )
     }
@@ -20,24 +22,21 @@ class App extends Component {
 function mapStateToProps(state) {
     console.log(state)
     return {
-        count: state.weather
+        value: state.color
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        add: () => {
+        changeColor: (value) => {
             dispatch({
-                type: ADD
+                type: CHANGE_COLOR,
+                payload: {
+                    value
+                }
             })
-        },
-        minus: () =>{
-            dispatch({
-                type: MINUS
-            })
-
         }
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps )(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
