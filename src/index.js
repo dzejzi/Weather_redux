@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import App from './routes/App';
+import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  hashHistory
+} from 'react-router-dom';
 import store from './store';
+import App from './routes/App';
+import City from './components/City';
+
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={hashHistory}>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/city/:name" component={City} />
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
