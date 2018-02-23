@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import CityContainer from '../containers/CityContainer';
 
-const City = (props) =>{
-    console.log(props)
+
+const City = (props) => {
     return (
-    <div>City {props.match.params.name}</div>
-)
+        <CityContainer city={props.match.params.name}/>
+    )
 }
 
 export default City;

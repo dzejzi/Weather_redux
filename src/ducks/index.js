@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
 import weather from './weather';
-import color from './color';
+import city from './city';
 
 
 const rootReducer = combineReducers({
-    weather,
-    color
+   city
 });
 
 export default rootReducer;

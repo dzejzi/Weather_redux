@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { RED, GREEN, CHANGE_COLOR } from './../../ducks/color';
+import { SAN_FRANCISCO, LOS_ANGELES, SAN_DIEGO, CHANGE_CITY } from './../../ducks/city';
 
 
 class App extends Component {
 
     render() {
-        const { changeColor, value } = this.props;
+        const { changeCity, value } = this.props;
         return (
             <div>
-                <Link to="/city/red">
-                    <button onClick={() => changeColor('red')}>RED</button>
+                <Link to="/city/San_Francisco">
+                    <button onClick={() => changeCity('San_Francisco')}>SAN_FRANCISCO</button>
                 </Link>
-                <Link to="/city/green">
-                    <button onClick={() => changeColor('green')}>GREEN</button>
+                <Link to="/city/Los_Angeles">
+                    <button onClick={() => changeCity('Los_Angeles')}>LOS_ANGELES</button>
                 </Link>
-                <Link to="/city/blue">
-                    <button onClick={() => changeColor('blue')}>BLUE</button>
+                <Link to="/city/San_Diego">
+                    <button onClick={() => changeCity('San_Diego')}>SAN_DIEGO</button>
                 </Link>
                 <p>{value}</p>
             </div>
@@ -29,15 +29,15 @@ class App extends Component {
 function mapStateToProps(state) {
     // console.log(state)
     return {
-        value: state.color
+        value: state.city
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        changeColor: (value) => {
+        changeCity: (value) => {
             dispatch({
-                type: CHANGE_COLOR,
+                type: CHANGE_CITY,
                 payload: {
                     value
                 }

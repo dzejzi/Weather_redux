@@ -2,7 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: [
+        'babel-polyfill',
+        "./src/index.js"
+    ],
     devtool: 'inline-source-map',
 
     output: {
@@ -13,11 +16,11 @@ module.exports = {
     module: {
 
         loaders: [
-         
+
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,         
-                loader: "babel-loader"             
+                exclude: /(node_modules|bower_components)/,
+                loader: "babel-loader"
 
             }]
     },
@@ -28,5 +31,5 @@ module.exports = {
         })
     ]
 
-   
+
 }
