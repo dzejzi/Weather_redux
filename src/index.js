@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 import store from './store';
 import App from './routes/App';
-import City from './components/City';
+import City from './routes/City';
 
 
 

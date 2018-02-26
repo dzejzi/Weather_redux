@@ -1,0 +1,46 @@
+.City {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 40px;
+        padding: 30px 0;
+        letter-spacing: 2px;
+    }
+    .description {
+        border: 1px solid #ffffff;
+        margin: 20px;
+        border-collapse: collapse;
+        font-family: 'Lato', sans-serif;
+        tr {
+            padding: 20px 0;
+            td {
+                font-size: 20px;
+                padding: 20px;
+                border: none;
+                color: #12647f;
+                text-align: left;
+                background-color: #ffffff;
+                &:nth-child(2) {
+                    font-size: 24px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    &__iconWrapper {
+        &__icon {
+            svg {
+                align-self: flex-start;
+                width: 60px;
+                path,
+                polygon {
+                    fill: #ffffff !important;
+                }
+            }
+        }
+    }
+}

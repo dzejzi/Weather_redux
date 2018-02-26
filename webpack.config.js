@@ -22,7 +22,17 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader"
 
-            }]
+            },
+            {
+                test: /(\.scss|\.css)$/,                
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.svg/, 
+                loader: 'svg-url-loader'
+            }
+
+        ]
     },
 
     plugins: [

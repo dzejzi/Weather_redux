@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin-ext');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+p,
+span,
+a {
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #42788a;
+}
+
+.weatherApp {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+        font-size: 40px;
+        padding: 30px 0;
+        letter-spacing: 2px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0 20px;
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes mymove {
+    from {
+        left: -500px;
+    }
+    to {
+        left: 500px;
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes mymove {
+    from {
+        left: -500px;
+    }
+    to {
+        left: 500px;
+    }
+}
+
+.clouds {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 100px;
+    .icon {
+        margin: 0 30px;
+        position: relative;
+        -webkit-animation: mymove 50s infinite;
+        /* Safari 4.0 - 8.0 */
+        animation: mymove 50s infinite;
+        path {
+            fill: #c6e0e8 !important;
+        }
+        &:nth-child(1) {
+            width: 100px;
+            animation-timing-function: ease-in;
+        }
+        &:nth-child(2) {
+            width: 300px;
+            animation-timing-function: ease-out;
+        }
+        &:nth-child(3) {
+            width: 180px;
+            animation-timing-function: linear;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.Button {
+    padding: 20px;
+    background-color: transparent;
+    width: 100%;
+    border: 1px solid #ffffff;
+    display: block;
+    margin: 10px auto;
+    font-size: 26px;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        background-color: rgba(198, 224, 232, 0.25);
+        transition: 0.7s;
+    }
+}
