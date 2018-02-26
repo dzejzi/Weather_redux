@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import './Button.scss';
+
 
 class Button extends PureComponent {
     render() {
-        const { children } = this.props;
+        const { children, ...rest } = this.props;
         return (
-            <button className="Button">{children}</button>
+            <button {...rest} className="Button">{children}</button>
         )
     }
 
