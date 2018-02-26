@@ -13,7 +13,7 @@ import App from './routes/App';
 import City from './routes/City';
 
 
-
+/*HashRouter*/ 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>

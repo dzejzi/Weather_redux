@@ -24,7 +24,7 @@
     "webpack-dev-server": "^2.11.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --port 3000 --historyApiFallback"
+    "start": "webpack-dev-server --port 3000 --historyApiFallback --content-base /"
   },
   "dependencies": {
     "react": "^16.2.0",
