@@ -29,7 +29,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --port 3000 --historyApiFallback --content-base /",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "cypress": "cypress open"
+    
   },
   "dependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
