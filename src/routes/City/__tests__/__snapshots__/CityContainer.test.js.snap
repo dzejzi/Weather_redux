@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CityContainer/> parseResponse correct params 1`] = `
+Object {
+  "city": "test1",
+  "country": "test2",
+  "icon": "test5",
+  "iconUrl": "test6",
+  "localTime": "test7",
+  "stateName": "test3",
+  "temperature": "test4",
+}
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<City/> should render Loader: isRequestingInitialData=false 1`] = `
+<div>
+  <Loader />
+</div>
+`;
+
+exports[`<City/> should render Loader: isRequestingInitialData=true 1`] = `
+<div>
+  <div
+    className="City"
+  >
+    <h1>
+      test1
+       
+      test2
+       
+      test3
+    </h1>
+    <table
+      className="description"
+    >
+      <tbody>
+        <tr>
+          <td>
+            temperature: 
+          </td>
+          <td>
+            test4
+            ° C
+          </td>
+        </tr>
+        <tr>
+          <td>
+            test5
+          </td>
+          <td>
+            <img
+              src="test6"
+              width="100"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            local time:
+          </td>
+          <td>
+             
+            test7
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      className="City__iconWrapper"
+    >
+      <Link
+        replace={false}
+        to="/"
+      >
+        <Icon
+          className="City__iconWrapper__icon"
+          src="test-mock"
+        />
+      </Link>
+    </div>
+  </div>
+</div>
+`;

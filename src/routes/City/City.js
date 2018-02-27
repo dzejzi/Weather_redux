@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import './City.scss';
 import SvgIcon from '../../components/SvgIcon';
 import backArrowIcon from '../../resources/left-arrow.svg';
 import Loader from '../../components/Loader/Loader';

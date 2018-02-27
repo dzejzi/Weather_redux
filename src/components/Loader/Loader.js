@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import './Loader.scss';
 import SvgIcon from '../../components/SvgIcon';
 import loader from '../../resources/Spinner-1s-200px.svg';
 
