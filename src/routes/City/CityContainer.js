@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import City from './City';
 
-const url = "http://api.wunderground.com/api/4af47e77859b009e/conditions/q/CA/";
+const url = "http://api.wunderground.com/api/4af47e77859b009e/conditions/q/";
+const stateAbbreviation = 'CA';
 
 
 class CityContainer extends Component {
@@ -21,7 +22,7 @@ class CityContainer extends Component {
     }
 
     async requestInitialData(city) {
-        const requestUrl = url + city + '.json';
+        const requestUrl = url + stateAbbreviation + '/' + city + '.json';
         this.setState({
             isRequestingInitialData: true
         });

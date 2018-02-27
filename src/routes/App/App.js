@@ -5,7 +5,9 @@ import { SAN_FRANCISCO, LOS_ANGELES, SAN_DIEGO, CHANGE_CITY } from './../../duck
 import './App.scss';
 import cloudIcon from '../../resources/cloud.svg';
 import SvgIcon from '../../components/SvgIcon';
-import Button from '../../components/Button'
+import Button from '../../components/Button';
+import AppInputSearch from './AppInputSearch'
+
 
 class App extends Component {
 
@@ -13,7 +15,8 @@ class App extends Component {
         const { changeCity, value } = this.props;
         return (
             <div className="weatherApp">
-                <h1>What's the weather like?</h1>
+                <h1>What's the weather like?</h1>         
+                    <AppInputSearch/>
                 <ul>
                     <Link to="/city/San_Francisco">
                         <li >
