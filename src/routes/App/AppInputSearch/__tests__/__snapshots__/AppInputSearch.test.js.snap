@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AppInputSearch/> should render Loader: isRequesting=false 1`] = `
+<div
+  className="AppInputSearch"
+>
+  <input
+    className="AppInputSearch__input"
+    onChange="test2"
+    type="text"
+    value="test1"
+  />
+  <ul />
+</div>
+`;
+
+exports[`<AppInputSearch/> should render Loader: isRequesting=true 1`] = `
+<div
+  className="AppInputSearch"
+>
+  <input
+    className="AppInputSearch__input"
+    onChange="test2"
+    type="text"
+    value="test1"
+  />
+  <Loader />
+</div>
+`;
+
+exports[`parseCitiesToComponents() return ul return ul 1`] = `
+<ul>
+  <Link
+    replace={false}
+    to="/city/TJ/test1"
+  >
+    <li>
+      <Button>
+        test1
+         
+        TJ
+      </Button>
+    </li>
+  </Link>
+  <Link
+    replace={false}
+    to="/city/TD/test2"
+  >
+    <li>
+      <Button>
+        test2
+         
+        TD
+      </Button>
+    </li>
+  </Link>
+  <Link
+    replace={false}
+    to="/city/TT/test3"
+  >
+    <li>
+      <Button>
+        test3
+         
+        TT
+      </Button>
+    </li>
+  </Link>
+</ul>
+`;

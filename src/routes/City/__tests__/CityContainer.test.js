@@ -4,14 +4,14 @@ import { shallow, mount } from 'enzyme';
 
 describe('<CityContainer/>', () => {
     describe('parseResponse', () => {
+
         const props = {
             match: {
                 params: {
                     name: 'test'
                 }
             }
-        }
-
+        };
         const wrapper = shallow(<CityContainer {...props} />);
         const { parseResponse } = wrapper.instance();
 
@@ -33,7 +33,8 @@ describe('<CityContainer/>', () => {
                     local_time_rfc822: 'test7'
                 }
             })).toMatchSnapshot();
-        })
+        });
 
     })
+
 })

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { CHANGE_CITY } from './../../ducks/city';
-import './App.scss';
 import cloudIcon from '../../resources/cloud.svg';
 import SvgIcon from '../../components/SvgIcon';
 import AppInputSearch from './AppInputSearch'
