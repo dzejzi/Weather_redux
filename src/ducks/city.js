@@ -1,7 +1,4 @@
 //actions
-export const SAN_FRANCISCO = 'SAN_FRANCISCO';
-export const LOS_ANGELES = 'LOS_ANGELES';
-export const SAN_DIEGO = 'SAN_DIEGO';
 export const CHANGE_CITY = 'CHANGE_CITY';
 
 //reducer

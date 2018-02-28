@@ -19,7 +19,7 @@ ReactDOM.render(
     <Router history={hashHistory}>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/city/:name" component={City} />
+        <Route path="/city/:state/:name" component={City} />
       </Switch>
     </Router>
   </Provider>,

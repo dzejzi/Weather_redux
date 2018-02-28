@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import AppInputSearch from './AppInputSearch';
 import _ from 'lodash';
 
@@ -20,15 +21,15 @@ class AppInputSearchContainer extends Component {
     }
 
     handleChange(event) {
+        const {value} = event.target;
         this.setState({
-            value: event.target.value
+            value
         });
-
-        const cityName = this.state.value;
-        this.requestSuggestions(cityName);
+        this.requestSuggestions(value);
     }
 
     async requestSuggestions(city) {
+
         const requestUrl = url + city;
 
         this.setState({
@@ -38,6 +39,7 @@ class AppInputSearchContainer extends Component {
         try {
             const response = await fetch(requestUrl);
             const parseResponse = await response.json();
+            console.log('parseResponseCItyCOntainer', parseResponse);
             const parsed = this.parseResponse(parseResponse.RESULTS);
 
             this.setState({
@@ -48,6 +50,10 @@ class AppInputSearchContainer extends Component {
         catch (error) {
             console.log('there was an error', error)
         }
+    }
+
+    countryToState(){
+        //todo replace US for state AL,AK
     }
 
     parseResponse(response) {
@@ -63,13 +69,12 @@ class AppInputSearchContainer extends Component {
         return searchedCities;
     }
 
+
     render() {
         const {
             searchedCities,
             value,
             isRequesting
-
-
         } = this.state;
 
         return (
@@ -77,10 +82,31 @@ class AppInputSearchContainer extends Component {
                 searchedCities={searchedCities}
                 value={value}
                 handleInputChange={this.handleChange}
-                isRequesting={isRequesting} />
+                isRequesting={isRequesting} 
+                placeholder="name of the city you want to search for"
+                />
 
         )
     }
 }
 
-export default AppInputSearchContainer
+function mapStateToProps(state) {
+    return {
+        value: state.city
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        changeCity: (value) => {
+            dispatch({
+                type: CHANGE_CITY,
+                payload: {
+                    value
+                }
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppInputSearchContainer);

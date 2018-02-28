@@ -17,8 +17,18 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: #42788a;
+html {
+    height: 100vh;
+    background: rgba(36, 82, 97, 1);
+    background-repeat: no-repeat;
+    background-size: 2000px 2000px;
+    background: -moz-linear-gradient(-45deg, rgba(36, 82, 97, 1) 0%, rgba(66, 120, 138, 1) 18%, rgba(74, 137, 158, 1) 38%, rgba(90, 143, 161, 1) 68%, rgba(30, 101, 125, 1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(36, 82, 97, 1)), color-stop(18%, rgba(66, 120, 138, 1)), color-stop(38%, rgba(74, 137, 158, 1)), color-stop(68%, rgba(90, 143, 161, 1)), color-stop(100%, rgba(30, 101, 125, 1)));
+    background: -webkit-linear-gradient(-45deg, rgba(36, 82, 97, 1) 0%, rgba(66, 120, 138, 1) 18%, rgba(74, 137, 158, 1) 38%, rgba(90, 143, 161, 1) 68%, rgba(30, 101, 125, 1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(36, 82, 97, 1) 0%, rgba(66, 120, 138, 1) 18%, rgba(74, 137, 158, 1) 38%, rgba(90, 143, 161, 1) 68%, rgba(30, 101, 125, 1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(36, 82, 97, 1) 0%, rgba(66, 120, 138, 1) 18%, rgba(74, 137, 158, 1) 38%, rgba(90, 143, 161, 1) 68%, rgba(30, 101, 125, 1) 100%);
+    background: linear-gradient(135deg, rgba(36, 82, 97, 1) 0%, rgba(66, 120, 138, 1) 18%, rgba(74, 137, 158, 1) 38%, rgba(90, 143, 161, 1) 68%, rgba(30, 101, 125, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#245261', endColorstr='#1e657d', GradientType=1);
 }
 
 .weatherApp {
@@ -35,9 +45,8 @@ body {
     }
     ul {
         list-style-type: none;
-        margin: 0 20px;
         width: 100%;
-        max-width: 400px;
+        max-width: 700px;
     }
 }
 

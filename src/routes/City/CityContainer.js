@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import City from './City';
 
 const url = "http://api.wunderground.com/api/4af47e77859b009e/conditions/q/";
-const stateAbbreviation = 'CA';
 
 
 class CityContainer extends Component {
@@ -17,21 +16,22 @@ class CityContainer extends Component {
     }
 
     componentDidMount() {
-        const cityName = this.props.match.params.name;
-        this.requestInitialData(cityName);
+        const { name, state } = this.props.match.params;
+        console.log('this.props', this.props)
+        this.requestInitialData(name, state);
     }
 
-    async requestInitialData(city) {
-        const requestUrl = url + stateAbbreviation + '/' + city + '.json';
+    async requestInitialData(city, state) {
+        const requestUrl = `${url}${state}/${city}.json`;
+        console.log('requestUrl', requestUrl)
         this.setState({
             isRequestingInitialData: true
         });
         try {
             const response = await fetch(requestUrl);
             const parseResponse = await response.json();
-            const parsed = this.parseResponse(parseResponse)
+            const parsed = this.parseResponse(parseResponse);
 
-            console.log(parseResponse.current_observation)
             this.setState({
                 ...parsed,
                 isRequestingInitialData: false
