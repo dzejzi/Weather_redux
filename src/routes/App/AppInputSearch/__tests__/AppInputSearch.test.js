@@ -58,7 +58,7 @@ describe('parseCitiesToComponents() return ul', () => {
         const list = wrapper.instance().parseCitiesToComponents(array);
 
         expect(list).toMatchSnapshot();
-        //console.log('path', path)
+       
     });
 
 })

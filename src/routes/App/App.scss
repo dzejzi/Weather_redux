@@ -78,6 +78,8 @@ html {
     display: flex;
     justify-content: flex-start;
     margin-top: 100px;
+    width: 100%;
+    overflow-x: hidden;
     .icon {
         margin: 0 30px;
         position: relative;
