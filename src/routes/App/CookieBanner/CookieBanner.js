@@ -9,7 +9,7 @@ class CookieBanner extends Component {
 
     render() {
         const { accepted, handleOnClick } = this.props;
-        console.log('accepted', accepted)
+ 
         return (
             (!accepted) &&
             (

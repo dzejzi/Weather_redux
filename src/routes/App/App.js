@@ -3,12 +3,13 @@ import { CHANGE_CITY } from './../../ducks/city';
 import cloudIcon from '../../resources/cloud.svg';
 import SvgIcon from '../../components/SvgIcon';
 import AppInputSearch from './AppInputSearch';
-import CookieBanner from './CookieBanner'
+import CookieBanner from './CookieBanner';
+
 
 class App extends Component {
 
     componentDidMount() {
-        console.log(this.middleIcon);
+       // console.log(this.middleIcon);
     }
 
 
@@ -17,7 +18,7 @@ class App extends Component {
         return (
             <div className="weatherApp">
                 <CookieBanner />
-                
+                     
                 <h1>What's the weather like?</h1>
                 <AppInputSearch />
 
