@@ -17,12 +17,23 @@
             border: none;
             border-radius: 0;
             outline-color: #0c4152;
-            margin-bottom: 30px;
+          
             &::placeholder {
                 font-size: 18px;
                 color: #cccccc;
                 font-weight: 300;
             }
+            &-incorrect{
+                border: 1px solid red;
+            }
+            &-correct{
+                border: 1px solid green;
+            }
+        }
+        &__message{
+            margin-bottom: 30px;
+            color: red;
+            font-size: 12px;
         }
         &__button {
             width: 100%;
@@ -30,7 +41,7 @@
             height: 45px;
             background-color: #114758;
             border: 1px solid #114758;
-            font-size: 18px;
+            font-size: 22px;
             color: #cccccc;
             font-weight: 400;
             margin: 0 auto;
