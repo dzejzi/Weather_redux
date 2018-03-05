@@ -17,13 +17,13 @@ class CityContainer extends Component {
 
     componentDidMount() {
         const { name, state } = this.props.match.params;
-        console.log('this.props', this.props)
+       
         this.requestInitialData(name, state);
     }
 
     async requestInitialData(city, state) {
         const requestUrl = `${url}${state}/${city}.json`;
-        console.log('requestUrl', requestUrl)
+       
         this.setState({
             isRequestingInitialData: true
         });

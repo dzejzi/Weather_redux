@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import weather from './weather';
 import city from './city';
+import authenticate from './authenticate';
 
 
 const rootReducer = combineReducers({
-   city
+   city, 
+   authenticate
 });
 
 export default rootReducer;

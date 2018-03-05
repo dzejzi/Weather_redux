@@ -6,22 +6,27 @@ import {
   Route,
   Link,
   Switch,
-  hashHistory
+  hashHistory,
+  Redirect,
+  withRouter
 } from 'react-router-dom';
 import store from './store';
 import App from './routes/App';
 import City from './routes/City';
+import Login from './routes/Login';
+import PrivateRoute from './routes/PrivateRoute';
 
 
-/*HashRouter*/ 
+/*HashRouter*/
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/city/:state/:name" component={City} />
+        <Route path="/login" component={Login} />
+        <PrivateRoute exact path="/" component={App} />
+         <PrivateRoute path="/city/:state/:name" component={City} />
       </Switch>
     </Router>
   </Provider>,
-  document.getElementById('root')
+    document.getElementById('root')
 );

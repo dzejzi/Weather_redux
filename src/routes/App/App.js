@@ -8,13 +8,9 @@ import CookieBanner from './CookieBanner';
 
 class App extends Component {
 
-    componentDidMount() {
-       // console.log(this.middleIcon);
-    }
-
-
     render() {
         const { changeCity, value } = this.props;
+      
         return (
             <div className="weatherApp">
                 <CookieBanner />
