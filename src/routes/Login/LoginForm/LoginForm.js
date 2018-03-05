@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+const login = "akra";
+const password = "akra";
 
 class LoginFormContainer extends Component {
 
@@ -27,7 +29,7 @@ class LoginFormContainer extends Component {
     validateForm(event) {
         event.preventDefault();
         const { loginValue, passwordValue } = this.state
-        if (loginValue === 'akra' && passwordValue === 'akra') {
+        if (loginValue === login && passwordValue === password) {
             this.props.handleOnSubmit()
         }
 
@@ -38,14 +40,15 @@ class LoginFormContainer extends Component {
         const { loginValue, passwordValue } = this.state
 
         return (
-            <div>
-                <form onSubmit={this.validateForm}>
+            <div className="LoginForm">
+                <form onSubmit={this.validateForm} className="LoginForm__form">
                     <input
                         type="text"
                         placeholder="Login"
                         onChange={this.handleInputChange}
                         name="loginValue"
                         value={loginValue}
+                        className="LoginForm__form__input"
                     />
                     <input
                         type="text"
@@ -53,8 +56,14 @@ class LoginFormContainer extends Component {
                         onChange={this.handleInputChange}
                         name="passwordValue"
                         value={passwordValue}
+                        className="LoginForm__form__input"
                     />
-                    <button type="submit" value="Submit">LOGIN</button>
+                    <button
+                        type="submit"
+                        value="Submit"
+                        className="LoginForm__form__button">
+                        Submit
+                    </button>
                 </form>
 
             </div>

@@ -10,9 +10,9 @@ class Login extends Component {
     render() {
         const { handleOnSubmit, pathname } = this.props;
         return (
-            <div>
-                <p>Login</p>
-                <p>You must log in to view the page at {pathname}</p>
+            <div className="Login">
+                <h1 className="Login__header">Log in</h1>
+                {/*<p>You must log in to view the page at {pathname}</p>*/}
                 <LoginForm handleOnSubmit={handleOnSubmit} />
             </div>
         )
