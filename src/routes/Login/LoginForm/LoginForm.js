@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { ifError } from 'assert';
 
-const login = "akra";
-const password = "akra";
+const validLogin = "akra";
+const validPassword = "akra";
 
 class LoginFormContainer extends Component {
 
@@ -10,8 +10,15 @@ class LoginFormContainer extends Component {
         super(props)
 
         this.state = {
-            loginValue: '',
-            passwordValue: ''
+            login: {
+                value: '',
+                error: null
+            },
+            password: {
+                value: '',
+                error: null
+            }
+
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -23,47 +30,64 @@ class LoginFormContainer extends Component {
         const { value, name } = target;
 
         this.setState({
-            [name]: value
+            [name]: Object.assign({}, this.state[name], {value})
         });
     }
 
     validateForm(event) {
         event.preventDefault();
-        const { loginValue, passwordValue } = this.state
+        const { login, password } = this.state
 
-        if (!(loginValue === login) || !(passwordValue === password)) {
+        if (login.value !== validLogin || password.value !== validPassword) {
 
-            if (!(loginValue === login)) {
+            if (login.value !== validLogin) {
                 this.login.classList.remove('LoginForm__form__input-correct');
-                this.login.classList.add('LoginForm__form__input-incorrect');               
-                this.login.nextElementSibling.innerHTML = "Please enter the correct login"
-            }else{
+                this.login.classList.add('LoginForm__form__input-incorrect');
+                this.setState({
+                    login: Object.assign({}, this.state.login, {
+                        error: 'Please enter the correct login'
+                    })
+                })
+            } else {
                 this.login.classList.remove('LoginForm__form__input-incorrect');
-                this.login.classList.add('LoginForm__form__input-correct');                
-                this.login.nextElementSibling.innerHTML = ""
+                this.login.classList.add('LoginForm__form__input-correct');
+                this.setState({
+                    login: Object.assign({}, this.state.login, {
+                        error: null
+                    })
+                })
             }
 
-            if (!(passwordValue === password)) {
+            if (password.value !== validPassword) {
                 this.password.classList.remove('LoginForm__form__input-correct');
-                this.password.classList.add('LoginForm__form__input-incorrect'); 
-                this.password.nextElementSibling.innerHTML = "Please enter the correct password"
-            }else{
+                this.password.classList.add('LoginForm__form__input-incorrect');
+                this.setState({
+                    password: Object.assign({}, this.state.password, {
+                        error: 'Please enter the correct password'
+                    })
+                })
+
+            } else {
                 this.password.classList.remove('LoginForm__form__input-incorrect');
-                this.password.classList.add('LoginForm__form__input-correct');    
-                this.password.nextElementSibling.innerHTML = "" 
+                this.password.classList.add('LoginForm__form__input-correct');
+                this.setState({
+                    password: Object.assign({}, this.state.password, {
+                        error: null
+                    })
+                })
             }
 
             return false
-        } 
+        }
 
-        this.props.handleOnSubmit()       
+        this.props.handleOnSubmit()
 
     }
 
     render() {
         const { handleOnSubmit } = this.props;
-        const { loginValue, passwordValue } = this.state
-
+        const { login, password } = this.state
+       
         return (
             <div className="LoginForm">
                 <form onSubmit={this.validateForm} className="LoginForm__form">
@@ -72,21 +96,22 @@ class LoginFormContainer extends Component {
                         ref={(login) => { this.login = login; }}
                         placeholder="Login"
                         onChange={this.handleInputChange}
-                        name="loginValue"
-                        value={loginValue}
+                        name="login"
+                        value={login.value}
                         className="LoginForm__form__input"
                     />
-                    <span className="LoginForm__form__message"></span>
+                    {login.error && <span className="LoginForm__form__message">{login.error}</span>}
+
                     <input
-                        type="text"
+                        type="password"
                         ref={(password) => { this.password = password; }}
                         placeholder="Password"
                         onChange={this.handleInputChange}
-                        name="passwordValue"
-                        value={passwordValue}
+                        name="password"
+                        value={password.value}
                         className="LoginForm__form__input"
                     />
-                    <span className="LoginForm__form__message"></span>
+                    {password.error && <span className="LoginForm__form__message">{password.error}</span>}
                     <button
                         type="submit"
                         value="Submit"
